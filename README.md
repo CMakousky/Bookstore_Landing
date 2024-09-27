@@ -20,3 +20,13 @@ Wireframe Ideas
 3. Be able to scroll through different categories with cursor. See Kalana's example. This may be more of a mobile feature. Consider developing primarily for mobile.
 4. Have a special page for educators. See Kalana's example.
 5. 
+
+Delegation of tasks
+
+Christopher - Feature: Click on small image, image enlarges to more info like description and ability to add to cart
+
+Brody - Featured Products/ Best Sellers
+
+Thida - Nav Bar/Footer maybe
+
+Kalana - Search Bar/Advanced Gear icon
