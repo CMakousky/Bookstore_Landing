@@ -1,25 +1,19 @@
-//Query Selectors to locate the "Add to Cart" buttons
-const cartAddBook1 = document.querySelector('#cartAddBook1');
-const cartAddBook2 = document.querySelector('#cartAddBook2');
-const cartAddBook3 = document.querySelector('#cartAddBook3');
-const cartAddBook4 = document.querySelector('#cartAddBook4');
-
-//Set cartContents based on the presence of items in local storage
-if (localStorage.length === 0) {cartContents=[]}
-else{cartContents = JSON.parse(localStorage.getItem('cartContents'))};
-
-//Set cart array index counter
-if (localStorage.length === 0){n=0}
-else{n=cartContents.length};
-
-console.log(localStorage);
-console.log(cartContents);
-
 //Catalogue of books
 const bookCatalogue = ['Book 1','Book 2', 'Book 3', 'Book 4'];
 
 //Index selector for the catalogue of books
 let m = 0;
+
+//Set cartContents array based on the presence of items in local storage
+if (localStorage.length === 0) {cartContents=[]}
+else{cartContents = JSON.parse(localStorage.getItem('cartContents'))};
+
+//Set cartContents index counter
+if (localStorage.length === 0){n=0}
+else{n=cartContents.length};
+
+console.log(localStorage);
+console.log(cartContents);
 
 //Function to add a book to the cart
 const addBook = function(){
@@ -28,6 +22,12 @@ const addBook = function(){
     n++;
     console.log(cartContents);
 };
+
+//Query Selectors to locate the "Add to Cart" buttons
+const cartAddBook1 = document.querySelector('#cartAddBook1');
+const cartAddBook2 = document.querySelector('#cartAddBook2');
+const cartAddBook3 = document.querySelector('#cartAddBook3');
+const cartAddBook4 = document.querySelector('#cartAddBook4');
 
 //Event Listeners
 cartAddBook1.addEventListener('click', function(){
