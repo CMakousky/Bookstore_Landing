@@ -23,7 +23,8 @@ Wireframe Ideas
 
 Delegation of tasks
 
-Christopher - Feature: Click on small image, image enlarges to more info like description and ability to add to cart
+Christopher - Feature: Click on small image, image enlarges to more info like description. Implement ability to add selected product to cart.
+              Features Completed: Click on "Learn More" button to bring up product info.
 
 Brody - Featured Products/ Best Sellers
 
