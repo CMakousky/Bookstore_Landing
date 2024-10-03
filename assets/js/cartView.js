@@ -27,6 +27,9 @@ console.log(bookQuantity);
 //Array to house the "Remove from Cart" button event listeners
 const cartRemoveBook=[];
 
+//Function to remove book from cart
+const removeBook=function(){};
+
 //Make an array of the keys from the object "bookQuantity"
 const bookQuantityKeys=Object.keys(bookQuantity);
 //Make an array of the values from the object "bookQuantity"

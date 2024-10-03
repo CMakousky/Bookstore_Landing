@@ -28,8 +28,6 @@ const cartAddBook=[
     document.querySelector('#cartAddBook4')
 ];
 
-console.log(cartAddBook);
-
 //Event Listeners
 cartAddBook[0].addEventListener('click', function(){
     addBook(cartContents, bookCatalogue, n, 0);
