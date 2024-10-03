@@ -1,5 +1,5 @@
 //Catalogue of books
-const bookCatalogue = ['Book 1','Book 2', 'Book 3', 'Book 4'];
+const bookCatalogue = ['Book1','Book2', 'Book3', 'Book4'];
 
 //Set cartContents array based on the presence of items in local storage
 if (localStorage.length === 0){cartContents=[]}
@@ -11,6 +11,18 @@ else{n=cartContents.length};
 
 console.log(localStorage);
 console.log(cartContents);
+
+//Object to keep track the quantity of each book in the cart
+const bookQuantity={};
+
+//Function to quantify the number of each type of book in the cart
+const quantifyCartContents=function(x){
+    bookQuantity[x]=(bookQuantity[x] || 0)+1;
+};
+
+//Perform the "quantifyCartContents" for each element of the "cartContents" array
+cartContents.forEach(quantifyCartContents);
+console.log(bookQuantity);
 
 //Function to add a book to the cart
 const addBook = function(cartContents, bookCatalogue, n, m){
