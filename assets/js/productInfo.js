@@ -16,7 +16,9 @@ const infoBook=[
 
 //Show Book Info Function
 const showInfoBook=function(infoBook, j){
+    //Loop through the infoBook array while "i" is less than the length value
     for(i=0; i<infoBook.length; i++){
+        //Set the style of infoBook[i] to be visible only when the value of "i" equals that of "j"
         if(i===j){infoBook[i].hidden = false}
         else{infoBook[i].hidden = true};
     }

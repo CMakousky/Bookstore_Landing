@@ -2,7 +2,7 @@
 const bookCatalogue = ['Book 1','Book 2', 'Book 3', 'Book 4'];
 
 //Set cartContents array based on the presence of items in local storage
-if (localStorage.length === 0) {cartContents=[]}
+if (localStorage.length === 0){cartContents=[]}
 else{cartContents = JSON.parse(localStorage.getItem('cartContents'))};
 
 //Set cartContents index counter "n" initial value
