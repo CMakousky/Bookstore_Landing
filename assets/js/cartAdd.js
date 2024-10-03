@@ -12,18 +12,6 @@ else{n=cartContents.length};
 console.log(localStorage);
 console.log(cartContents);
 
-//Object to keep track the quantity of each book in the cart
-const bookQuantity={};
-
-//Function to quantify the number of each type of book in the cart
-const quantifyCartContents=function(x){
-    bookQuantity[x]=(bookQuantity[x] || 0)+1;
-};
-
-//Perform the "quantifyCartContents" for each element of the "cartContents" array
-cartContents.forEach(quantifyCartContents);
-console.log(bookQuantity);
-
 //Function to add a book to the cart
 const addBook = function(cartContents, bookCatalogue, n, m){
     cartContents[n]=bookCatalogue[m];
@@ -60,3 +48,14 @@ cartAddBook[3].addEventListener('click', function(){
     addBook(cartContents, bookCatalogue, n, 3);
     n++;
 });
+
+const cartContentsObjects=[{Book1:1},{Book2:6}]
+console.log(cartContentsObjects);
+
+//Function to add a bookObject to the cart
+const addBookObjects = function(cartContentsObjects){
+    cartContentsObjects.Book1++;
+
+    console.log(cartContentsObjects);
+    return cartContentsObjects;
+};
