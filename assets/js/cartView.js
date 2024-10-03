@@ -24,6 +24,9 @@ const quantifyCartContents=function(x){
 cartContents.forEach(quantifyCartContents);
 console.log(bookQuantity);
 
+//Array to house the "Remove from Cart" button event listeners
+const cartRemoveBook=[];
+
 //Make an array of the keys from the object "bookQuantity"
 const bookQuantityKeys=Object.keys(bookQuantity);
 //Make an array of the values from the object "bookQuantity"
@@ -52,4 +55,12 @@ for(c=0; c<bookQuantityKeys.length; c++){
     newElement.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.id=`#cartRemove${a}`;
     //Append the newElement as a child of cartDisplay
     cartDisplay.appendChild(newElement);
+
+    //Add querySelector for the cartRemove button
+    cartRemoveBook[c]=document.getElementById(`#cartRemove${a}`);
+
+    //Add Event Listeners
+    cartRemoveBook[c].addEventListener('click', function(){
+        console.log(`Remove ${a} from the cart.`);
+    });
 };
