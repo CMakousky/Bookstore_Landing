@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Home - Brand</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md sticky-top py-3 navbar-dark" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/">Brand</a>
+      <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+        <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navcol-1"></div>
+    </div>
+  </nav>
+
+  <header class="bg-dark">
+    <div class="container pt-4 pt-xl-5">
+      <div class="row pt-5">
+        <div class="col-md-8 col-xl-6 text-center text-md-start mx-auto">
+          <div class="text-center">
+            <h1>Welcome to Our Website</h1>
+            <p class="lead">Providing the best solutions for your needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container text-center py-5">
+      <h2>Our Services</h2>
+      <p>We offer a wide range of services to meet every type of need.</p>
+    </div>
+  </section>
+
+  <section class="py-5 bg-dark">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+          <h2 class="fw-bold text-white">Contact Us</h2>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 col-xl-4">
+          <div>
+            <form class="p-3 p-xl-4" method="post">
+              <div class="name mb-3">
+                <i class="fas fa-user"></i>
+                <input class="form-control" type="text" id="name" name="name" placeholder="Name">
+              </div>
+              <div class="email mb-3">
+                <i class="fas fa-envelope"></i>
+                <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+              </div>
+              <div class="mb-3 message-box">
+                <textarea class="form-control" id="msg" name="message" rows="6" placeholder="Message"></textarea>
+              </div>
+              <div>
+                <button class="btn btn-primary shadow d-block w-100" type="button" id="send" onclick="sendMessage()">Send</button>
+              </div>
+              <div class="message">
+                <div class="alert alert-success mt-2" id="success" style="display:none;">Your Message Successfully Sent!</div>
+                <div class="alert alert-danger mt-2" id="danger" style="display:none;">Fields can't be empty!</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Include JavaScript before the closing body tag -->
+  <script>
+    function sendMessage(){
+      var Name = document.getElementById('name');
+      var email = document.getElementById('email');
+      var msg = document.getElementById('msg');
+      const success = document.getElementById('success');
+      const danger = document.getElementById('danger');
+
+      if(Name.value === '' || email.value === '' || msg.value === ''){
+          danger.style.display = 'block';
+      } else {
+          setTimeout(() => {
+              Name.value = '';
+              email.value = '';
+              msg.value = '';
+          }, 2000);
+
+          success.style.display = 'block';
+      }
+
+      setTimeout(() => {
+          danger.style.display = 'none';
+          success.style.display = 'none';
+      }, 4000);
+    }
+  </script>
+
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/script.min.js"></script>
+</body>
+</html>
