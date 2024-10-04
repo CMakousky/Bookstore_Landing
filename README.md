@@ -20,3 +20,4 @@ Wireframe Ideas
 3. Be able to scroll through different categories with cursor. See Kalana's example. This may be more of a mobile feature. Consider developing primarily for mobile.
 4. Have a special page for educators. See Kalana's example.
 5. 
+

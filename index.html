@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Landing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .best-sellers {
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; 
+        }
+
+        .product {
+            margin: 10px;
+            text-align: center;
+            width: 150px; 
+        }
+
+        .image {
+            width: 150px;
+            height: 200px;
+            background-color: lightgray;
+            overflow: hidden; 
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+        .featured-products {
+            padding: 20px;
+        }
+
+        .featured-grid {
+            display: flex;
+            justify-content: space-between; 
+        }
+
+        .featured-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; 
+            flex: 1; 
+        }
+
+        .left-stack {
+            align-items: flex-start; 
+        }
+
+        .right-stack {
+            align-items: flex-end;
+        }
+
+        .featured-stack .image {
+            width: 150px; 
+            height: 220px; 
+            overflow: hidden;
+        }
+
+        .featured-stack .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px; 
+            margin-top: 5px; 
+        }
+
+        button:hover {
+            background-color: #45a049; 
+        }
+
+        @media (max-width: 600px) {
+            .product-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .featured-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="best-sellers">
+        <h2>Best Sellers</h2>
+        <div class="product-grid">
+            <div class="product">
+                <div class="image">
+                    <img src="placeholder_image_url" alt="Book Title 1">
+                </div>
+                <h3>Book Title 1</h3>
+                <p>Author Name</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="product">
+                <div class="image">
+                    <img src="placeholder_image_url" alt="Book Title 2">
+                </div>
+                <h3>Book Title 2</h3>
+                <p>Author Name</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="product">
+                <div class="image">
+                    <img src="placeholder_image_url" alt="Book Title 3">
+                </div>
+                <h3>Book Title 3</h3>
+                <p>Author Name</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="product">
+                <div class="image">
+                    <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/91NlCv2bm4L-1-e1500055988175.jpg?auto=format&q=60&fit=max&w=930" alt="Book Title 4">
+                </div>
+                <h3>Book Title 4</h3>
+                <p>Author Name</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="featured-grid">
+            <div class="featured-stack left-stack">
+                <div class="image">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.u_WAb0PokyOXoJHMvOUt5AHaLH&pid=Api&P=0&h=220" alt="Featured Book 1">
+                </div>
+                <div class="image">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.u_WAb0PokyOXoJHMvOUt5AHaLH&pid=Api&P=0&h=220" alt="Featured Book 2">
+                </div>
+            </div>
+            <div class="featured-stack right-stack">
+                <div class="image">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.u_WAb0PokyOXoJHMvOUt5AHaLH&pid=Api&P=0&h=220" alt="Featured Book 3">
+                </div>
+                <div class="image">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.u_WAb0PokyOXoJHMvOUt5AHaLH&pid=Api&P=0&h=220" alt="Featured Book 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
