@@ -37,33 +37,36 @@ const bookQuantityValues=Object.values(bookQuantity);
 
 for(c=0; c<bookQuantityKeys.length; c++){
 
-    let a=bookQuantityKeys[c];
-    let b=bookQuantityValues[c];
+    let bookTitle=bookQuantityKeys[c];
+    let itemQuantity=bookQuantityValues[c];
 
     //Query Selector to locate the #cartColumn
     const cartDisplay=document.querySelector('#cartColumn');
     //Query Selector to locate the template element
-    const oldElement=document.querySelector('#cartBook0');
+    const oldElement=document.querySelector('#cartBookTemplate');
     //Clone the template element
     let newElement=oldElement.cloneNode(true);
     //Change the id of the clone element
-    newElement.id=`#cart${a}`;
+    newElement.id=`#cart${bookTitle}`;
     //Change the hidden value of newElement to false
     newElement.hidden=false;
-    //Change nth child text "Book0"
-    newElement.firstChild.nextSibling.firstChild.nextSibling.textContent=`${a}`;
+
+    let newUpdatedElement = newElement.firstChild.nextSibling.firstChild.nextSibling;
+
+    //Change nth child text "bookTitle"
+    newUpdatedElement.textContent=`${bookTitle}`;
     //Change nth child text "Item Quantity: Quantity"
-    newElement.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.textContent=`Item Quantity: ${b}`;
+    newUpdatedElement.nextSibling.nextSibling.textContent=`Item Quantity: ${itemQuantity}`;
     //Change nth child button id
-    newElement.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.id=`#cartRemove${a}`;
+    newUpdatedElement.nextSibling.nextSibling.nextSibling.nextSibling.id=`#cartRemove${bookTitle}`;
     //Append the newElement as a child of cartDisplay
     cartDisplay.appendChild(newElement);
 
     //Add querySelector for the cartRemove button
-    cartRemoveBook[c]=document.getElementById(`#cartRemove${a}`);
+    cartRemoveBook[c]=document.getElementById(`#cartRemove${bookTitle}`);
 
     //Add Event Listeners
     cartRemoveBook[c].addEventListener('click', function(){
-        console.log(`Remove ${a} from the cart.`);
+        console.log(`Remove ${bookTitle} from the cart.`);
     });
 };
