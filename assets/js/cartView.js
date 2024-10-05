@@ -32,7 +32,7 @@ const bookQuantityValues=Object.values(bookQuantity);
 //Array to house the "Remove from Cart" button event listeners
 const cartRemoveBook=[];
 
-//Array to house `#itemQuantity${bookTitle}` element IDs
+//Array to house #itemQuantityBookTitle element ID selectors
 const itemQuantityID = [];
 
 //Function to remove book from cart
@@ -40,6 +40,7 @@ const removeBook=function(bookTitle){
     //Find the first occurance of "bookTitle" in the "cartContents" array
     let bookLocation=cartContents.findIndex((element) => element === `${bookTitle}`);
     //console.log(`The index location of the book in cartContents is [${bookLocation}]`);
+
     if(bookLocation !== -1){
         //Copy the contents of the "cartContents" array prior to "bookLocation" into the array "preContents"
         let preContents=cartContents.slice(0, bookLocation);
@@ -50,24 +51,27 @@ const removeBook=function(bookTitle){
         console.log(cartContents);
     }
     else{console.log(`${bookTitle} is no longer in the cart!`)};
+
     //Save the new "cartContents" to localStorage
     localStorage.setItem('cartContents', JSON.stringify(cartContents));
+
     //Update the "bookQuantity" array with the new cart values
     bookQuantity[bookTitle]--;
     console.log(bookQuantity);
 };
+
+//Query Selector to locate the #cartColumn
+const cartDisplay=document.querySelector('#cartColumn');
+//Query Selector to locate the template element
+const templateElement=document.querySelector('#cartBookTemplate');
 
 for(c=0; c<bookQuantityKeys.length; c++){
 
     let bookTitle=bookQuantityKeys[c];
     let itemQuantity=bookQuantityValues[c];
 
-    //Query Selector to locate the #cartColumn
-    const cartDisplay=document.querySelector('#cartColumn');
-    //Query Selector to locate the template element
-    const oldElement=document.querySelector('#cartBookTemplate');
     //Clone the template element
-    let newElement=oldElement.cloneNode(true);
+    let newElement=templateElement.cloneNode(true);
     //Change the ID of the clone element
     newElement.id=`#cart${bookTitle}`;
     //Change the hidden value of newElement to false
@@ -77,25 +81,28 @@ for(c=0; c<bookQuantityKeys.length; c++){
 
     //Change nth child text "bookTitle"
     newUpdatedElement.textContent=`${bookTitle}`;
+
     //Add an element ID to "Item Quantity: Quantity"
     newUpdatedElement.nextSibling.nextSibling.id=`#itemQuantity${bookTitle}`;
     //Change nth child text "Item Quantity: Quantity"
     newUpdatedElement.nextSibling.nextSibling.innerText=`Item Quantity: ${itemQuantity}`;
+
     //Change nth child button ID
     newUpdatedElement.nextSibling.nextSibling.nextSibling.nextSibling.id=`#cartRemove${bookTitle}`;
     //Append the newElement as a child of cartDisplay
     cartDisplay.appendChild(newElement);
 
-    //Add query selector for `#itemQuantity${bookTitle}`
+    //Add selector for #itemQuantityBookTitle element ID
     itemQuantityID[c]=document.getElementById(`#itemQuantity${bookTitle}`);
     
-    //Add querySelector for the cartRemove button
+    //Add selector for the cartRemove button
     cartRemoveBook[c]=document.getElementById(`#cartRemove${bookTitle}`);
 
     //Add Event Listeners
     cartRemoveBook[c].addEventListener('click', function(){
         console.log(`Remove ${bookTitle} from the cart.`);
         removeBook(bookTitle);
+        //Window reload is currently required for the quantity text to update
         window.location.reload();
         //itemQuantityID[c].innerText=`Item Quantity: ${itemQuantity}`;
     });
