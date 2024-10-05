@@ -24,46 +24,86 @@ const quantifyCartContents=function(x){
 cartContents.forEach(quantifyCartContents);
 console.log(bookQuantity);
 
-//Array to house the "Remove from Cart" button event listeners
-const cartRemoveBook=[];
-
-//Function to remove book from cart
-const removeBook=function(){};
-
 //Make an array of the keys from the object "bookQuantity"
 const bookQuantityKeys=Object.keys(bookQuantity);
 //Make an array of the values from the object "bookQuantity"
 const bookQuantityValues=Object.values(bookQuantity);
 
+//Array to house the "Remove from Cart" button event listeners
+const cartRemoveBook=[];
+
+//Array to house #itemQuantityBookTitle element ID selectors
+const itemQuantityID = [];
+
+//Function to remove book from cart
+const removeBook=function(bookTitle){
+    //Find the first occurance of "bookTitle" in the "cartContents" array
+    let bookLocation=cartContents.findIndex((element) => element === `${bookTitle}`);
+    //console.log(`The index location of the book in cartContents is [${bookLocation}]`);
+
+    if(bookLocation !== -1){
+        //Copy the contents of the "cartContents" array prior to "bookLocation" into the array "preContents"
+        let preContents=cartContents.slice(0, bookLocation);
+        //Copy the contents of the "cartContents" array after "bookLocation" into the array "postContents"
+        let postContents=cartContents.slice(bookLocation+1);
+        //Assign the concatinated "preContents" and "postContents" arrays into the "cartContents" array
+        cartContents=preContents.concat(postContents);
+        console.log(cartContents);
+    }
+    else{console.log(`${bookTitle} is no longer in the cart!`)};
+
+    //Save the new "cartContents" to localStorage
+    localStorage.setItem('cartContents', JSON.stringify(cartContents));
+
+    //Update the "bookQuantity" array with the new cart values
+    bookQuantity[bookTitle]--;
+    console.log(bookQuantity);
+};
+
+//Query Selector to locate the #cartColumn
+const cartDisplay=document.querySelector('#cartColumn');
+//Query Selector to locate the template element
+const templateElement=document.querySelector('#cartBookTemplate');
+
 for(c=0; c<bookQuantityKeys.length; c++){
 
-    let a=bookQuantityKeys[c];
-    let b=bookQuantityValues[c];
+    let bookTitle=bookQuantityKeys[c];
+    let itemQuantity=bookQuantityValues[c];
 
-    //Query Selector to locate the #cartColumn
-    const cartDisplay=document.querySelector('#cartColumn');
-    //Query Selector to locate the template element
-    const oldElement=document.querySelector('#cartBook0');
     //Clone the template element
-    let newElement=oldElement.cloneNode(true);
-    //Change the id of the clone element
-    newElement.id=`#cart${a}`;
+    let newElement=templateElement.cloneNode(true);
+    //Change the ID of the clone element
+    newElement.id=`#cart${bookTitle}`;
     //Change the hidden value of newElement to false
     newElement.hidden=false;
-    //Change nth child text "Book0"
-    newElement.firstChild.nextSibling.firstChild.nextSibling.textContent=`${a}`;
+
+    let newUpdatedElement = newElement.firstChild.nextSibling.firstChild.nextSibling;
+
+    //Change nth child text "bookTitle"
+    newUpdatedElement.textContent=`${bookTitle}`;
+
+    //Add an element ID to "Item Quantity: Quantity"
+    newUpdatedElement.nextSibling.nextSibling.id=`#itemQuantity${bookTitle}`;
     //Change nth child text "Item Quantity: Quantity"
-    newElement.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.textContent=`Item Quantity: ${b}`;
-    //Change nth child button id
-    newElement.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.id=`#cartRemove${a}`;
+    newUpdatedElement.nextSibling.nextSibling.innerText=`Item Quantity: ${itemQuantity}`;
+
+    //Change nth child button ID
+    newUpdatedElement.nextSibling.nextSibling.nextSibling.nextSibling.id=`#cartRemove${bookTitle}`;
     //Append the newElement as a child of cartDisplay
     cartDisplay.appendChild(newElement);
 
-    //Add querySelector for the cartRemove button
-    cartRemoveBook[c]=document.getElementById(`#cartRemove${a}`);
+    //Add selector for #itemQuantityBookTitle element ID
+    itemQuantityID[c]=document.getElementById(`#itemQuantity${bookTitle}`);
+    
+    //Add selector for the cartRemove button
+    cartRemoveBook[c]=document.getElementById(`#cartRemove${bookTitle}`);
 
     //Add Event Listeners
     cartRemoveBook[c].addEventListener('click', function(){
-        console.log(`Remove ${a} from the cart.`);
+        console.log(`Remove ${bookTitle} from the cart.`);
+        removeBook(bookTitle);
+        //Window reload is currently required for the quantity text to update
+        window.location.reload();
+        //itemQuantityID[c].innerText=`Item Quantity: ${itemQuantity}`;
     });
 };
