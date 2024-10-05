@@ -43,7 +43,7 @@ const removeBook=function(bookTitle){
     if(bookLocation !== -1){
         //Copy the contents of the "cartContents" array prior to "bookLocation" into the array "preContents"
         let preContents=cartContents.slice(0, bookLocation);
-        //Copy the contents of the "cartContents" array after "bookLocation" into the array "preContents"
+        //Copy the contents of the "cartContents" array after "bookLocation" into the array "postContents"
         let postContents=cartContents.slice(bookLocation+1);
         //Assign the concatinated "preContents" and "postContents" arrays into the "cartContents" array
         cartContents=preContents.concat(postContents);
