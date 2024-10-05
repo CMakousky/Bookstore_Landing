@@ -31,3 +31,4 @@ Brody - Featured Products/ Best Sellers
 Thida - Nav Bar/Footer maybe
 
 Kalana - Search Bar/Advanced Gear icon
+
