@@ -53,7 +53,7 @@ const removeBook=function(bookTitle){
     //Save the new "cartContents" to localStorage
     localStorage.setItem('cartContents', JSON.stringify(cartContents));
     //Update the "bookQuantity" array with the new cart values
-    bookQuantity[`${bookTitle}`]--;
+    bookQuantity[bookTitle]--;
     console.log(bookQuantity);
 };
 
