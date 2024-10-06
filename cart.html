@@ -45,8 +45,8 @@
     <div class="form-container">
         <form class="form">
           <input id="search" type="text" class="input" placeholder="&#x1f50d..." />
-          <button id="searchButton" class="search">Search</button> <!-- Changed id here -->
-          <button id="clear" class="clear-results">Clear</button>
+          <button class="btn btn-primary btn-sm" id="searchButton" class="search">Search</button> <!-- Changed id here -->
+          <button class="btn btn-primary btn-sm" id="clear" class="clear-results">Clear</button>
         </form>
     </div>
     <!-- Search Results -->
@@ -76,7 +76,6 @@
     </div>
 
     <main>
-
         <section>
             <!-- Container for all elements -->
             <div class="container py-5">
@@ -85,7 +84,7 @@
                     <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-center">
                         <!-- Column container for shopping cart items -->
                         <div class="col mb-4" id="cartColumn">
-
+                            <!-- Template for New Elements -->
                             <div class="card bg-primary-light" id="cartBookTemplate" hidden>
                                 <div class="card-body text-center px-4 py-5 px-md-5">
                                     <h5 class="fw-bold text-primary card-text mb-2">bookTitle</h5>
@@ -99,7 +98,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Footer Items -->
