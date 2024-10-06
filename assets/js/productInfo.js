@@ -26,29 +26,26 @@ const showInfoBook = function (infoBook, j) {
         //Set the style of infoBook[i] to be visible only when the value of "i" equals that of "j"
         if (i === j) { infoBook[i].hidden = false }
         else { infoBook[i].hidden = true };
-    }
+    };
+    window.location.href="#detailedProductInfo";
 };
 
 //Event Listeners
 learnMoreBook[0].addEventListener('click', function () {
     showInfoBook(infoBook, 0);
-    window.location.href="#detailedProductInfo"
     //$('#exampleModal').modal('show');
 });
 
 learnMoreBook[1].addEventListener('click', function () {
     showInfoBook(infoBook, 1);
-    window.location.href="#detailedProductInfo"
 });
 
 learnMoreBook[2].addEventListener('click', function () {
     showInfoBook(infoBook, 2);
-    window.location.href="#detailedProductInfo"
 });
 
 learnMoreBook[3].addEventListener('click', function () {
     showInfoBook(infoBook, 3);
-    window.location.href="#detailedProductInfo"
 });
 
 // window.onclick = function (event) {
