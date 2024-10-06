@@ -32,19 +32,23 @@ const showInfoBook = function (infoBook, j) {
 //Event Listeners
 learnMoreBook[0].addEventListener('click', function () {
     showInfoBook(infoBook, 0);
+    window.location.href="#detailedProductInfo"
     //$('#exampleModal').modal('show');
 });
 
 learnMoreBook[1].addEventListener('click', function () {
     showInfoBook(infoBook, 1);
+    window.location.href="#detailedProductInfo"
 });
 
 learnMoreBook[2].addEventListener('click', function () {
     showInfoBook(infoBook, 2);
+    window.location.href="#detailedProductInfo"
 });
 
 learnMoreBook[3].addEventListener('click', function () {
     showInfoBook(infoBook, 3);
+    window.location.href="#detailedProductInfo"
 });
 
 // window.onclick = function (event) {
