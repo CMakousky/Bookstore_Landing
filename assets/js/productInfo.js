@@ -26,7 +26,8 @@ const showInfoBook = function (infoBook, j) {
         //Set the style of infoBook[i] to be visible only when the value of "i" equals that of "j"
         if (i === j) { infoBook[i].hidden = false }
         else { infoBook[i].hidden = true };
-    }
+    };
+    window.location.href="#detailedProductInfo";
 };
 
 //Event Listeners
