@@ -76,104 +76,62 @@
   </div>
     
     <main> 
-
-        <section>
+        <!-- Experimental element for developing productInfo.js -->
+        <section hidden>
             <div class="container py-5">
                 <div class="mx-auto" style="max-width: 900px;">
                     <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-center">
                         <div class="col mb-4">
-                            <!-- Books selectable in this section -->
-                            <!-- Click on a book image to view product information on right side of screen -->
+                            
                             <div class="card bg-primary-light">
                                 <div class="card-body text-center px-4 py-5 px-md-5">
-                                    <p class="fw-bold text-primary card-text mb-2">Book 1</p>
+                                    <p class="fw-bold text-primary card-text mb-2">Book Title 1</p>
                                     <!-- <h5 class="fw-bold card-title mb-3">Lorem ipsum dolor sit&nbsp;nullam et quis ad cras porttitor</h5> -->
-                                    <button class="btn btn-primary btn-sm" type="button" id="learnMoreBook1">Learn more</button>
+                                    <button class="btn btn-primary btn-sm" type="button">Learn more</button>
                                 </div>
                             </div>
+
                             <div class="card bg-primary-light">
                                 <div class="card-body text-center px-4 py-5 px-md-5">
-                                    <p class="fw-bold text-primary card-text mb-2">Book 2</p>
+                                    <p class="fw-bold text-primary card-text mb-2">Book Title 2</p>
                                     <!-- <h5 class="fw-bold card-title mb-3">Lorem ipsum dolor sit&nbsp;nullam et quis ad cras porttitor</h5> -->
-                                    <button class="btn btn-primary btn-sm" type="button" id="learnMoreBook2">Learn more</button>
+                                    <button class="btn btn-primary btn-sm" type="button">Learn more</button>
                                 </div>
                             </div>
-                            <div class="card bg-primary-light">
-                                <div class="card-body text-center px-4 py-5 px-md-5">
-                                    <p class="fw-bold text-primary card-text mb-2">Book 3</p>
-                                    <!-- <h5 class="fw-bold card-title mb-3">Lorem ipsum dolor sit&nbsp;nullam et quis ad cras porttitor</h5> -->
-                                    <button class="btn btn-primary btn-sm" type="button" id="learnMoreBook3">Learn more</button>
-                                </div>
-                            </div>
-                            <div class="card bg-primary-light">
-                                <div class="card-body text-center px-4 py-5 px-md-5">
-                                    <p class="fw-bold text-primary card-text mb-2">Book 4</p>
-                                    <!-- <h5 class="fw-bold card-title mb-3">Lorem ipsum dolor sit&nbsp;nullam et quis ad cras porttitor</h5> -->
-                                    <button class="btn btn-primary btn-sm" type="button" id="learnMoreBook4">Learn more</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mb-4">
-                            <!-- Container for detailed product information -->
-                            <div class="card bg-secondary-light" id="infoBook1" hidden>
-                                <div class="card-body text-center px-4 py-5 px-md-5">
-                                    <p class="fw-bold text-secondary card-text mb-2">Book 1</p>
-                                    <h5 class="fw-bold card-title mb-3">This is product information about Book 1.</h5>
-                                    <button class="btn btn-secondary btn-sm" type="button" id="cartAddBook1">Add to Cart</button>
-                                </div>
-                            </div>
-                            <div class="card bg-secondary-light" id="infoBook2" hidden>
-                                <div class="card-body text-center px-4 py-5 px-md-5">
-                                    <p class="fw-bold text-secondary card-text mb-2">Book 2</p>
-                                    <h5 class="fw-bold card-title mb-3">This is product information about Book 2.</h5>
-                                    <button class="btn btn-secondary btn-sm" type="button" id="cartAddBook2">Add to Cart</button>
-                                </div>
-                            </div>
-                            <div class="card bg-secondary-light" id="infoBook3" hidden>
-                                <div class="card-body text-center px-4 py-5 px-md-5">
-                                    <p class="fw-bold text-secondary card-text mb-2">Book 3</p>
-                                    <h5 class="fw-bold card-title mb-3">This is product information about Book 3.</h5>
-                                    <button class="btn btn-secondary btn-sm" type="button" id="cartAddBook3">Add to Cart</button>
-                                </div>
-                            </div>
-                            <div class="card bg-secondary-light" id="infoBook4" hidden>
-                                <div class="card-body text-center px-4 py-5 px-md-5">
-                                    <p class="fw-bold text-secondary card-text mb-2">Book 4</p>
-                                    <h5 class="fw-bold card-title mb-3">This is product information about Book 4.</h5>
-                                    <button class="btn btn-secondary btn-sm" type="button" id="cartAddBook4">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
+
+                        </div>                        
                     </div>
                 </div>
             </div>
         </section>
-          <section class="best-sellers">
+        
+        <!-- Books selectable in this section -->
+        <section class="best-sellers">
         <h2>Best Sellers</h2>
         <div class="product-grid">
             <div class="product">
                 <div class="image">
-                    <img src="placeholder_image_url" alt="Book Title 1">
+                    <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/91NlCv2bm4L-1-e1500055988175.jpg?auto=format&q=60&fit=max&w=930" alt="Book Title 1">
                 </div>
                 <h3>Book Title 1</h3>
                 <p>Author Name</p>
-                <button>Shop Now</button>
+                <button id="learnMoreBook1">Shop Now</button>
             </div>
             <div class="product">
                 <div class="image">
-                    <img src="placeholder_image_url" alt="Book Title 2">
+                    <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/91NlCv2bm4L-1-e1500055988175.jpg?auto=format&q=60&fit=max&w=930" alt="Book Title 2">
                 </div>
                 <h3>Book Title 2</h3>
                 <p>Author Name</p>
-                <button>Shop Now</button>
+                <button id="learnMoreBook2">Shop Now</button>
             </div>
             <div class="product">
                 <div class="image">
-                    <img src="placeholder_image_url" alt="Book Title 3">
+                    <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/91NlCv2bm4L-1-e1500055988175.jpg?auto=format&q=60&fit=max&w=930" alt="Book Title 3">
                 </div>
                 <h3>Book Title 3</h3>
                 <p>Author Name</p>
-                <button>Shop Now</button>
+                <button id="learnMoreBook3">Shop Now</button>
             </div>
             <div class="product">
                 <div class="image">
@@ -181,12 +139,12 @@
                 </div>
                 <h3>Book Title 4</h3>
                 <p>Author Name</p>
-                <button>Shop Now</button>
+                <button id="learnMoreBook4">Shop Now</button>
             </div>
         </div>
-    </section>
+        </section>
 
-    <section class="featured-products">
+        <section class="featured-products">
         <h2>Featured Products</h2>
         <div class="featured-grid">
             <div class="featured-stack left-stack">
@@ -197,6 +155,45 @@
                     <img src="https://tse4.mm.bing.net/th?id=OIP.u_WAb0PokyOXoJHMvOUt5AHaLH&pid=Api&P=0&h=220" alt="Featured Book 2">
                 </div>
             </div>
+
+            <!-- Container for detailed product information -->
+            <div class="container py-5">
+                <div class="mx-auto" style="max-width: 900px;">
+                    <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-center">
+                        <div class="col mb-4">   
+                            <div class="card bg-secondary-light" id="infoBook1">
+                                <div class="card-body text-center px-4 py-5 px-md-5">
+                                    <img class="card-img-top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/91NlCv2bm4L-1-e1500055988175.jpg?auto=format&q=60&fit=max&w=930" alt="Book Title 1">
+                                    <h5 class="fw-bold card-title mb-3">This is product information about Book 1.</h5>
+                                    <button class="btn btn-secondary btn-sm" type="button" id="cartAddBook1">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="card bg-secondary-light" id="infoBook2" hidden>
+                                <div class="card-body text-center px-4 py-5 px-md-5">
+                                    <img class="card-img-top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/91NlCv2bm4L-1-e1500055988175.jpg?auto=format&q=60&fit=max&w=930" alt="Book Title 2">
+                                    <h5 class="fw-bold card-title mb-3">This is product information about Book 2.</h5>
+                                    <button class="btn btn-secondary btn-sm" type="button" id="cartAddBook2">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="card bg-secondary-light" id="infoBook3" hidden>
+                                <div class="card-body text-center px-4 py-5 px-md-5">
+                                    <img class="card-img-top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/91NlCv2bm4L-1-e1500055988175.jpg?auto=format&q=60&fit=max&w=930" alt="Book Title 3">
+                                    <h5 class="fw-bold card-title mb-3">This is product information about Book 3.</h5>
+                                    <button class="btn btn-secondary btn-sm" type="button" id="cartAddBook3">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="card bg-secondary-light" id="infoBook4" hidden>
+                                <div class="card-body text-center px-4 py-5 px-md-5">
+                                    <img class="card-img-top" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/91NlCv2bm4L-1-e1500055988175.jpg?auto=format&q=60&fit=max&w=930" alt="Book Title 4">
+                                    <h5 class="fw-bold card-title mb-3">This is product information about Book 4.</h5>
+                                    <button class="btn btn-secondary btn-sm" type="button" id="cartAddBook4">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="featured-stack right-stack">
                 <div class="image">
                     <img src="https://tse4.mm.bing.net/th?id=OIP.u_WAb0PokyOXoJHMvOUt5AHaLH&pid=Api&P=0&h=220" alt="Featured Book 3">
@@ -206,8 +203,7 @@
                 </div>
             </div>
         </div>
-    </section>
-      
+        </section>
       
     </main>
 
