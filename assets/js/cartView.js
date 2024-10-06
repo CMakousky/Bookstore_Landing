@@ -1,6 +1,17 @@
 //Catalogue of books
 const bookCatalogue = ['Book1','Book2', 'Book3', 'Book4'];
 
+//Array of Book Cover image sources
+const coverImgSrc = [
+    "https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/91NlCv2bm4L-1-e1500055988175.jpg?auto=format&q=60&fit=max&w=930",
+    "https://m.media-amazon.com/images/I/61n2olkhm8L._SL1200_.jpg",
+    "https://m.media-amazon.com/images/I/81FCWL2XNiL._SL1500_.jpg",
+    "https://m.media-amazon.com/images/I/91tBaQgfHeL._SL1500_.jpg"
+];
+
+//Array of Book Cover image alt
+const converImgAlt = ["Book Title 1", "Book Title 2", "Book Title 3", "Book Title 4"];
+
 //Set cartContents array based on the presence of items in local storage
 if (localStorage.length === 0){cartContents=[]}
 else{cartContents = JSON.parse(localStorage.getItem('cartContents'))};
@@ -65,6 +76,7 @@ const cartDisplay=document.querySelector('#cartColumn');
 //Query Selector to locate the template element
 const templateElement=document.querySelector('#cartBookTemplate');
 
+//Build the "cart.html" page based on "cartContents"
 for(c=0; c<bookQuantityKeys.length; c++){
 
     let bookTitle=bookQuantityKeys[c];
@@ -77,24 +89,28 @@ for(c=0; c<bookQuantityKeys.length; c++){
     //Change the hidden value of newElement to false
     newElement.hidden=false;
 
-    let newUpdatedElement = newElement.firstChild.nextSibling.firstChild.nextSibling;
+    let newElementBookTitle = newElement.firstChild.nextSibling.firstChild.nextSibling;
+    //let newElementBookCoverImgSrc = newElementBookTitle.nextSibling.nextSibling;
+    let newElementItemQuantity = newElementBookTitle.nextSibling.nextSibling.nextSibling.nextSibling;
+    let newElementButton =newElementBookTitle.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
 
-    //Change nth child text "bookTitle"
-    newUpdatedElement.textContent=`${bookTitle}`;
+    //Change the text of "bookTitle"
+    newElementBookTitle.textContent=`${bookTitle}`;
 
+    //Change the Book Cover Image
+    //newElementBookCoverImgSrc=;
+    
     //Add an element ID to "Item Quantity: Quantity"
-    newUpdatedElement.nextSibling.nextSibling.id=`#itemQuantity${bookTitle}`;
-    //Change nth child text "Item Quantity: Quantity"
-    newUpdatedElement.nextSibling.nextSibling.innerText=`Item Quantity: ${itemQuantity}`;
-
-    //Change nth child button ID
-    newUpdatedElement.nextSibling.nextSibling.nextSibling.nextSibling.id=`#cartRemove${bookTitle}`;
+    newElementItemQuantity.id=`#itemQuantity${bookTitle}`;
+    //Change the quantity text of "Item Quantity: Quantity"
+    newElementItemQuantity.innerText=`Item Quantity: ${itemQuantity}`;
+    //Change #cartRemoveBookTitle button ID
+    newElementButton.id=`#cartRemove${bookTitle}`;
     //Append the newElement as a child of cartDisplay
     cartDisplay.appendChild(newElement);
 
     //Add selector for #itemQuantityBookTitle element ID
-    itemQuantityID[c]=document.getElementById(`#itemQuantity${bookTitle}`);
-    
+    itemQuantityID[c]=document.getElementById(`#itemQuantity${bookTitle}`);   
     //Add selector for the cartRemove button
     cartRemoveBook[c]=document.getElementById(`#cartRemove${bookTitle}`);
 
