@@ -1,10 +1,8 @@
 const searchItems = [
-    { name: 'robin hood' },
-    { name: 'harry potter' },
-    { name: 'narnia' },
-    { name: 'bluey' },
-    { name: 'percy jackson' },
-    { name: 'the hunger games' },
+    { name: 'Book1' },
+    { name: 'Book2' },
+    { name: 'nBook3' },
+    { name: 'Book4' },
   ];
   
   const list = document.getElementById('list');
