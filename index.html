@@ -206,6 +206,65 @@
         </section>      
     </main>
 
+    <section class="py-5 bg-dark">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+              <h2 class="fw-bold text-white">Contact Us</h2>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4">
+              <div>
+                <form class="p-3 p-xl-4" method="post">
+                  <div class="name mb-3">
+                    
+                    <input class="form-control" type="text" id="name" name="name" placeholder="Name">
+                  </div>
+                  <div class="email mb-3">
+                    
+                    <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+                  </div>
+                  <div class="mb-3 message-box">
+                    <textarea class="form-control" id="msg" name="message" rows="6" placeholder="Message"></textarea>
+                  </div>
+                  <div>
+                    <button class="btn btn-primary shadow d-block w-100" type="button" id="send" onclick="sendMessage()">Send</button>
+                  </div>
+                  <div class="message">
+                    <div class="alert alert-success mt-2" id="success" style="display:none;">Your Message Successfully Sent!</div>
+                    <div class="alert alert-danger mt-2" id="danger" style="display:none;">Fields can't be empty!</div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    
+      <!-- Added newsletter subscription form here -->
+      <section class="py-5">
+        <div class="container">
+          <div class="bg-dark border rounded border-dark d-flex flex-column justify-content-between align-items-center flex-lg-row p-4 p-lg-5">
+            <div class="text-center text-lg-start py-3 py-lg-1">
+              <h2 class="fw-bold mb-2">Subscribe to our newsletter</h2>
+            </div>
+            <form class="d-flex justify-content-center flex-wrap flex-lg-nowrap" method="post">
+              <div class="my-2">
+                <input class="border rounded-pill shadow-sm form-control" type="email" id="newsletter-email" name="email" placeholder="Your Email">
+              </div>
+              <div class="my-2">
+                <button class="btn btn-primary shadow ms-2" type="button" id="subscribe" onclick="validateNewsletter()">Subscribe</button>
+              </div>
+              <div class="message">
+                <div class="alert alert-success mt-2" id="newsletter-success" style="display:none;">Thank you for subscribing to our newsletter!</div>
+                <div class="alert alert-danger mt-2" id="newsletter-danger" style="display:none;">Email can't be empty!</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
     <!-- Footer Items -->
     <footer class="bg-dark">
         <div class="container py-4 py-lg-5">
@@ -261,6 +320,7 @@
     <script src="./assets/js/index.js"></script>
     <script src="assets/js/productInfo.js"></script>
     <script src="assets/js/cartAdd.js"></script>
+    <script src="newsletter.js"></script>
 </body>
 
 </html>
