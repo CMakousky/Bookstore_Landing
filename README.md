@@ -1,4 +1,4 @@
-# project1
+# project1: Bookstore Landing
 
 Group 3: "Sarah Jarosz"
 
@@ -13,6 +13,25 @@ Staff: Austin
     Edwards, Devin
 
     Resick, Brody
+
+DESCRIPTION
+
+An online bookstore where the user can stay up to date on the latest poplar books. Search our extensive catalogue with our intuative search feature. Select one of the featured items and press "Show Now" to view detailed product information. Add the desired books to the shopping cart and proceed to checkout!
+
+TECHNOLOGIES USED
+
+Bootstrap studio was used to assist in constructing the html elements and styles for this website.
+
+SCREENSHOT
+
+![plot](./assets/img/BookstoreLanding_Screenshot.PNG)
+
+DEPLOYED APPLICATION
+
+https://cmakousky.github.io/project1/index.html
+
+
+OLD PRODUCTION INFO
 
 Wireframe Ideas
 1. Header and Footer Style from Brody
@@ -31,19 +50,3 @@ Brody - Featured Products/ Best Sellers
 Thida - Nav Bar/Footer maybe
 
 Kalana - Search Bar/Advanced Gear icon
-
-DESCRIPTION
-
-An online bookstore where the user can stay up to date on the latest poplar books. Search our extensive catalogue with our intuative search feature. Select one of the featured items and press "Show Now" to view detailed product information. Add the desired books to the shopping cart and proceed to checkout!
-
-TECHNOLOGIES USED
-
-Bootstrap studio was used to assist in constructing the html elements and styles for this website.
-
-SCREENSHOT
-
-![plot](./assets/img/BookstoreLanding_Screenshot.PNG)
-
-DEPLOYED APPLICATION
-
-https://cmakousky.github.io/project1/index.html
