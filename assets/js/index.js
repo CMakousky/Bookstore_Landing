@@ -1,16 +1,15 @@
 const searchItems = [
-    { name: 'robin hood' },
-    { name: 'harry potter' },
-    { name: 'narnia' },
-    { name: 'bluey' },
-    { name: 'percy jackson' },
-    { name: 'the hunger games' },
+    { name: 'Book1' },
+    { name: 'Book2' },
+    { name: 'Book3' },
+    { name: 'Book4' },
   ];
   
   const list = document.getElementById('list');
   const searchInput = document.querySelector('.input');
   const searchButton = document.getElementById('searchButton');
   const clearButton = document.getElementById('clear');
+  const resultsContainer = document.querySelector('.results-container');
   
   
   searchInput.addEventListener("input", (event) => {
@@ -30,14 +29,19 @@ const searchItems = [
   // Handle search button click
   searchButton.addEventListener("click", (event) => {
     event.preventDefault(); // Prevent form submission
+    let results =[];
     let value = searchInput.value;
   
     if (value.trim()) {
-      renderList(searchItems.filter(book => {
+      results = renderList(searchItems.filter(book => {
         return book.name.toLowerCase().includes(value.toLowerCase());
       }));
     } else {
       clearList();
+    }
+    renderList(results);
+    if(!results.length) {
+      resultsContainer.innerHTML = '';
     }
   });
   
@@ -63,6 +67,8 @@ const searchItems = [
       noResults();
     }
   }
+
+//search results are highlighted for now, but in the future will need to be selectable
   
   // Clear the list
   function clearList() {
