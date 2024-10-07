@@ -34,16 +34,16 @@ Kalana - Search Bar/Advanced Gear icon
 
 DESCRIPTION
 
-    An online bookstore where the user can stay up to date on the latest poplar books. Search our extensive catalogue with our intuative search feature. Select one of the featured items and press "Show Now" to view detailed product information. Add the desired books to the shopping cart and proceed to checkout!
+An online bookstore where the user can stay up to date on the latest poplar books. Search our extensive catalogue with our intuative search feature. Select one of the featured items and press "Show Now" to view detailed product information. Add the desired books to the shopping cart and proceed to checkout!
 
 TECHNOLOGIES USED
 
-    Bootstrap studio was used to assist in constructing the html elements and styles for this website.
+Bootstrap studio was used to assist in constructing the html elements and styles for this website.
 
 SCREENSHOT
 
-    ![plot](./assets/img/BookstoreLanding_Screenshot.PNG)
+![plot](./assets/img/BookstoreLanding_Screenshot.PNG)
 
 DEPLOYED APPLICATION
 
-    https://cmakousky.github.io/project1/index.html
+https://cmakousky.github.io/project1/index.html
