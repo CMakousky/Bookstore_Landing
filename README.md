@@ -16,7 +16,7 @@ Staff: Austin
 
 DESCRIPTION
 
-An online bookstore where the user can stay up to date on the latest poplar books. Search our extensive catalogue with our intuative search feature. Select one of the featured items and press "Show Now" to view detailed product information. Add the desired books to the shopping cart and proceed to checkout!
+An online bookstore where the user can stay up to date on the latest poplar books. Search our extensive catalogue with our intuative search feature. Select one of the featured items and press "Shop Now" to view detailed product information. Add the desired books to the shopping cart and proceed to checkout!
 
 TECHNOLOGIES USED
 
@@ -28,7 +28,7 @@ SCREENSHOT
 
 DEPLOYED APPLICATION
 
-https://cmakousky.github.io/project1/index.html
+https://cmakousky.github.io/project1
 
 
 OLD PRODUCTION INFO
