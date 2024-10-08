@@ -28,7 +28,7 @@ SCREENSHOT
 
 DEPLOYED APPLICATION
 
-https://cmakousky.github.io/project1
+https://cmakousky.github.io/Bookstore_Landing/
 
 
 OLD PRODUCTION INFO
